@@ -59,7 +59,7 @@ from email.header import Header
 # 发送qq邮箱验证码，参数为收件箱地址和随机生成的验证码
 def send_email(receiver, ecode):
     # 发件者
-    sender = 'TwowD <497536112@qq.com>'
+    sender = ''
     # 邮件内容html格式
     content = f"<br/>欢迎注册Curious社区账号，您的邮箱验证码为："\
             f"<span style='color:red; font-size: 20px;'>{ecode}</span>, "\
@@ -70,7 +70,7 @@ def send_email(receiver, ecode):
     message['To'] = receiver
 
     smtpObj = SMTP_SSL('smtp.qq.com')
-    smtpObj.login(user='497536112@qq.com', password='lxagzlefoatzbhcf')
+    smtpObj.login(user='', password='')
     smtpObj.sendmail(sender, receiver, str(message))
     smtpObj.quit()
 
